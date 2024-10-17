@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Function to play the sound on user interaction
+    function playWarthogSound() {
+        const warthogSound = new Audio('warthog.mp3');
+        warthogSound.play().catch(function() {
+            console.log('Audio playback prevented by browser autoplay policy');
+        });
+    }
+
+    // Detect any user interaction: click, keypress, or scroll
+    function handleUserInteraction() {
+        playWarthogSound();
+        document.removeEventListener('click', handleUserInteraction); // Play only once
+        document.removeEventListener('scroll', handleUserInteraction);
+        document.removeEventListener('keypress', handleUserInteraction);
+    }
+
+    // Listen for first interaction (click, scroll, or keypress)
+    document.addEventListener('click', handleUserInteraction);
+    document.addEventListener('scroll', handleUserInteraction);
+    document.addEventListener('keypress', handleUserInteraction);
+
+    // GIF Background Logic
     const gifContainer = document.querySelector('.gif-container');
     const gifs = [
         'gifs/1.gif', 
@@ -30,17 +52,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('resize', fillBackground); // Refill background on window resize
 });
-// Easter egg: Random warthog sound on certain interaction
-document.addEventListener('DOMContentLoaded', () => {
-    const icons = document.querySelectorAll('.icon-container img');
-    const warthogSound = new Audio('warthog.mp3');
-    
-    icons.forEach(icon => {
-      icon.addEventListener('click', () => {
-        if (Math.random() > 0.7) { // Random chance of sound playing
-          warthogSound.play();
-        }
-      });
-    });
-  });
-  
