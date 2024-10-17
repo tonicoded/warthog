@@ -127,11 +127,10 @@ body {
 
   .quote {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #ffd700;
+    color: #00aaff;
     padding: 10px;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-family: 'Luckiest Guy', sans-serif;
     pointer-events: none;
     max-width: 90%; /* Ensure the quote doesn't exceed screen width */
@@ -141,30 +140,54 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .quote {
-        font-size: 1rem;
+        font-size: 1.3rem;
         padding: 8px;
     }
 }
 
 @media (max-width: 480px) {
     .quote {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
         padding: 6px;
     }
 }
 
 
   
-  .title {
+/* Styling for the $WARTHOG Title */
+.title {
     font-size: 3.5rem;
-    color: #ffd700;
+    color: #00aaff; /* Adjusted to match the blue color of the logo */
     margin: 0;
     letter-spacing: 2px;
-    animation: pop 1s ease-out forwards;
-    font-size: 3.5rem;
-  }
-  
+    animation: bounceIn 1s ease-out forwards, textGlow 1.5s infinite alternate; /* Bounce in and glowing text */
+    font-family: 'Anton', sans-serif; /* Fun font for titles */
+}
 
+/* Bounce In Animation */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8) translateY(-20px);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2) translateY(10px);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Glowing Text Effect */
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 10px rgba(0, 102, 204, 0.5), 0 0 20px rgba(0, 102, 204, 0.7);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(0, 102, 204, 1), 0 0 40px rgba(0, 102, 204, 1);
+    }
+}
 .tagline {
     font-size: 1.4rem;
     color: #fff;
