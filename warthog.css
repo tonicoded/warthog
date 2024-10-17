@@ -69,21 +69,59 @@ body {
     filter: drop-shadow(0 0 5px rgba(0, 0, 139, 0.5)); /* Adjusts the shadow effect for icons */
 }
 
-
+.icon-container img:hover {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease;
+  }
+  
 
 .warthog-logo {
     width: 250px;
     height: auto;
     margin-bottom: 20px;
     filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+    animation: wobble 3s infinite ease-in-out;
+    transition: transform 0.3s ease;
 }
+@keyframes wobble {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(5deg);
+    }
+    75% {
+      transform: rotate(-5deg);
+    }
+  }
+  
 
-.title {
+  
+  .warthog-logo:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+
+@keyframes pop {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .title {
     font-size: 3.5rem;
     color: #ffd700;
     margin: 0;
     letter-spacing: 2px;
-}
+    animation: pop 1s ease-out forwards;
+    font-size: 3.5rem;
+  }
+  
 
 .tagline {
     font-size: 1.4rem;

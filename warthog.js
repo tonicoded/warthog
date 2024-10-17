@@ -30,3 +30,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('resize', fillBackground); // Refill background on window resize
 });
+// Easter egg: Random warthog sound on certain interaction
+document.addEventListener('DOMContentLoaded', () => {
+    const icons = document.querySelectorAll('.icon-container img');
+    const warthogSound = new Audio('warthog.mp3');
+    
+    icons.forEach(icon => {
+      icon.addEventListener('click', () => {
+        if (Math.random() > 0.7) { // Random chance of sound playing
+          warthogSound.play();
+        }
+      });
+    });
+  });
+  
