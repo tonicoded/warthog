@@ -1,0 +1,219 @@
+/* General Styles */
+body {
+    font-family: 'Anton', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+    background-color: #2c2c2c; /* Fallback color */
+}
+
+/* Full Background Container */
+.gif-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ensure full width is filled */
+    grid-auto-rows: 200px;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .gif-container {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust for mobile */
+        grid-auto-rows: 100px;
+    }
+}
+
+/* GIF Element */
+.gif {
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Header Section */
+.header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent to see the GIFs */
+}
+
+/* Ensure the icons appear below the tagline and centered */
+.header-container {
+    position: relative;
+    text-align: center;
+    padding-bottom: 20px; /* Add padding to ensure there's space for icons */
+}
+
+/* Updated styles to move icons below the tagline */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Adjusts the distance between tagline and icons */
+}
+
+.icon-container img {
+    width: 30px;
+    height: 30px;
+    margin: 0 15px; /* Adds space between icons */
+    filter: drop-shadow(0 0 5px rgba(0, 0, 139, 0.5)); /* Adjusts the shadow effect for icons */
+}
+
+
+
+.warthog-logo {
+    width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.title {
+    font-size: 3.5rem;
+    color: #ffd700;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-top: 10px;
+    font-family: 'Luckiest Guy', sans-serif;
+}
+
+/* Introduction Section */
+.intro {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    margin: 40px auto;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* Meme Section */
+.memes {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    margin: 40px auto;
+    width: 85%;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.memes h2 {
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 40px;
+}
+
+.meme-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.meme-item {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.meme-item img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.meme-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.meme-item p {
+    color: #ccc;
+}
+
+/* Join Section */
+.join {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #333;
+}
+
+.join h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffd700;
+}
+
+.join p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+.join-button {
+    background-color: #ffd700;
+    color: #2c2c2c;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.join-button:hover {
+    background-color: #ffcd00;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    color: #999;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .meme-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meme-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
